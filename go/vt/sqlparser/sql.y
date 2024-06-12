@@ -7128,6 +7128,22 @@ convert_type:
   {
     $$ = &ConvertType{Type: string($1), Length: $2, Charset: $3}
   }
+| VARCHAR length_opt
+  {
+    $$ = &ConvertType{Type: string($1), Length: $2}
+  }
+| TEXT
+  {
+    $$ = &ConvertType{Type: string($1)}
+  }
+| BIGINT
+  {
+    $$ = &ConvertType{Type: string($1)}
+  }
+| BOOLEAN
+  {
+    $$ = &ConvertType{Type: string($1)}
+  }
 | DATE
   {
     $$ = &ConvertType{Type: string($1)}
