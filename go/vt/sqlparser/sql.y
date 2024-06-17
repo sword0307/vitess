@@ -7136,6 +7136,10 @@ convert_type:
   {
     $$ = &ConvertType{Type: string($1)}
   }
+| INT
+   {
+     $$ = &ConvertType{Type: string($1)}
+   }
 | BIGINT
   {
     $$ = &ConvertType{Type: string($1)}
